@@ -10,8 +10,15 @@ export default function CalculatorMain(props) {
   });
 
   const inputChangeHandler = (input, value) => {
-    setUserInput((prevData) => {
-      return { ...prevData, [input]: value };
+    // setUserInput((prevData) => {
+    //   return { ...prevData, [input]: value };
+    // });
+
+    setUserInput((prevInput) => {
+      return {
+        ...prevInput,
+        [input]: +value, // the "+" converts the string value to a number
+      };
     });
   };
 
